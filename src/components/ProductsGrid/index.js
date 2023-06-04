@@ -1,6 +1,3 @@
-import createElement from '../../../assets/lib/create-element.js';
-import ProductCard from '../ProductCard/index.js';
-
 export default class ProductGrid {
   constructor(products) {
     this.products = products;
@@ -11,7 +8,6 @@ export default class ProductGrid {
     this.cardsArr = [];
   }
 
-  // вставляем из задачи 6.2
   onClick(event) {
     if (event.target.closest(".card__button")) {  
       let Id = event.target.closest(".card").getAttribute("id");                         
@@ -20,14 +16,13 @@ export default class ProductGrid {
     }
   }
 
-  // фильтруем карточки, оставляем только заданые фильтрем
   updateFilter(filters) {
 
     Object.assign(this.filters, filters)
 
     let cards = () => {
       this.elem.innerHTML = "";
-      let productGridInner = document.createElement("div"); // создаем <div class="products-grid_inner">
+      let productGridInner = document.createElement("div");
       productGridInner.classList.add("products-grid__inner");
 
       for (let product of this.products) {
@@ -49,7 +44,6 @@ export default class ProductGrid {
         this.cardsArr.push(product);                                                  
       }
 
-      //  Html подходящих по фильтру карточек
       for (let elem of this.cardsArr) {  
         this.gridInner += `
           <div class="card" id ="${elem.id}">
@@ -65,7 +59,6 @@ export default class ProductGrid {
             </div>
           </div>`;
       }
-
       
       productGridInner.insertAdjacentHTML("afterbegin", this.gridInner);              
       this.elem.append(productGridInner);                                             

@@ -7,12 +7,10 @@ export default class CartIcon {
     this.addEventListeners();
   }assign
 
-  // Отрисовать пустую иконку корзины
   render() {
     this.elem = createElement('<div class="cart-icon"></div>');
   }
 
-  // Заполнить её данными из объекта cart (объяснено ниже)
   update(cart) {
     if (!cart.isEmpty()) {
       this.elem.classList.add('cart-icon_visible');
@@ -39,9 +37,7 @@ export default class CartIcon {
     document.addEventListener('scroll', () => this.updatePosition());
     window.addEventListener('resize', () => this.updatePosition());
   }
-
   
-  // позиционировать иконку корзины на экране
   updatePosition() {
 
     if (this.initialTopCoord === undefined) {                                                                               

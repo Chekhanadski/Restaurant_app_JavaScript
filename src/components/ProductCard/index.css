@@ -4,7 +4,6 @@
   flex-direction: column;
   position: relative;
   transition: 0.2s all;
-  cursor: pointer;
 }
 
 .card:hover,
