@@ -16,7 +16,7 @@ export default class Carousel {
     this.elem.addEventListener("click", (event) => this.slider(event));
   }
 
-  slider(event) { 
+  slider(event) {
     let counter = this.elem.querySelector(".carousel__inner").offsetWidth;
 
     if (event.target.closest(".carousel__arrow_left")) {
@@ -62,9 +62,7 @@ export default class Carousel {
 
   carousel(slides) {
     let carousel = document.createElement("div");
-    carousel.classList.add(
-      "carousel"
-    );
+    carousel.classList.add("carousel");
     carousel.insertAdjacentHTML(
       "afterbegin",
       `
@@ -80,19 +78,12 @@ export default class Carousel {
     );
 
     let divCarouselInner = document.createElement("div");
-    divCarouselInner.classList.add(
-      "carousel__inner"
-    );
+    divCarouselInner.classList.add("carousel__inner");
 
     for (const value of slides) {
       let divCarouselSlide = document.createElement("div");
-      divCarouselSlide.classList.add(
-        "carousel__slide"
-      ); 
-      divCarouselSlide.setAttribute(
-        "data-id",
-        `${value.id}`
-      );
+      divCarouselSlide.classList.add("carousel__slide");
+      divCarouselSlide.setAttribute("data-id", `${value.id}`);
       divCarouselSlide.insertAdjacentHTML(
         "afterbegin",
         `
