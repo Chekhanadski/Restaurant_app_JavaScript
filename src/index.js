@@ -1,21 +1,19 @@
-import Carousel from './components/Carousel/index.js';
-import slides from './components/Carousel/slides.js';
+import Carousel from "./components/Carousel/index.js";
+import slides from "./components/Carousel/slides.js";
 
-import RibbonMenu from './components/RibbonMenu/index.js';
-import categories from './components/RibbonMenu/categories.js';
+import RibbonMenu from "./components/RibbonMenu/index.js";
+import categories from "./components/RibbonMenu/categories.js";
 
-import StepSlider from './components/StepSlider/index.js';
-import ProductsGrid from './components/ProductsGrid/index.js';
+import StepSlider from "./components/StepSlider/index.js";
+import ProductsGrid from "./components/ProductsGrid/index.js";
 
-import CartIcon from './components/CartIcon/index.js';
-import Cart from './components/Cart/index.js';
+import CartIcon from "./components/CartIcon/index.js";
+import Cart from "./components/Cart/index.js";
 export default class Main {
-
-  constructor() {
-  }
+  constructor() {}
 
   async render() {
-    let carousel = new Carousel(slides); 
+    let carousel = new Carousel(slides);
     let dataCarouselHolder = document.querySelector("[data-carousel-holder]");
     dataCarouselHolder.append(carousel.elem);
 
@@ -34,25 +32,29 @@ export default class Main {
     let cart = new Cart(cartIcon);
 
     async function getProductList() {
-      return await fetch('products.json').then(response => response.json());
+      return await fetch("products.json").then((response) => response.json());
     }
-    
+
     let productList = await getProductList();
 
     let productsGrid = new ProductsGrid(productList);
-    let dataProductsGridHolder = document.querySelector("[data-products-grid-holder]");
+    let dataProductsGridHolder = document.querySelector(
+      "[data-products-grid-holder]"
+    );
     dataProductsGridHolder.innerHTML = "";
     dataProductsGridHolder.append(productsGrid.elem);
 
     productsGrid.updateFilter({
-      noNuts: document.getElementById('nuts-checkbox').checked,
-      vegeterianOnly: document.getElementById('vegeterian-checkbox').checked,
+      noNuts: document.getElementById("nuts-checkbox").checked,
+      vegeterianOnly: document.getElementById("vegeterian-checkbox").checked,
       maxSpiciness: stepSlider.value,
-      category: ribbonMenu.value
+      category: ribbonMenu.value,
     });
 
     document.body.addEventListener("product-add", (event) => {
-      let productToAdd = productList.find((product) => product.id === event.detail);
+      let productToAdd = productList.find(
+        (product) => product.id === event.detail
+      );
       cart.addProduct(productToAdd);
     });
 

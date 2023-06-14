@@ -9,16 +9,18 @@ export default class ProductGrid {
   }
 
   onClick(event) {
-    if (event.target.closest(".card__button")) {  
-      let Id = event.target.closest(".card").getAttribute("id");                         
-      let customEvent = new CustomEvent("product-add", { bubbles: true, detail: Id });
-      this.elem.dispatchEvent(customEvent);                                 
+    if (event.target.closest(".card__button")) {
+      let Id = event.target.closest(".card").getAttribute("id");
+      let customEvent = new CustomEvent("product-add", {
+        bubbles: true,
+        detail: Id,
+      });
+      this.elem.dispatchEvent(customEvent);
     }
   }
 
   updateFilter(filters) {
-
-    Object.assign(this.filters, filters)
+    Object.assign(this.filters, filters);
 
     let cards = () => {
       this.elem.innerHTML = "";
@@ -34,21 +36,29 @@ export default class ProductGrid {
           continue;
         }
 
-        if (this.filters.maxSpiciness !== undefined && product.spiciness > this.filters.maxSpiciness) {
+        if (
+          this.filters.maxSpiciness !== undefined &&
+          product.spiciness > this.filters.maxSpiciness
+        ) {
           continue;
         }
 
-        if (this.filters.category && product.category != this.filters.category) {
+        if (
+          this.filters.category &&
+          product.category != this.filters.category
+        ) {
           continue;
         }
-        this.cardsArr.push(product);                                                  
+        this.cardsArr.push(product);
       }
 
-      for (let elem of this.cardsArr) {  
+      for (let elem of this.cardsArr) {
         this.gridInner += `
           <div class="card" id ="${elem.id}">
             <div class="card__top">
-              <img src="/assets/images/products/${elem.image}" class="card__image" alt="product">
+              <img src="/assets/images/products/${
+                elem.image
+              }" class="card__image" alt="product">
               <span class="card__price">€${elem.price.toFixed(2)}</span>
             </div>
             <div class="card__body">
@@ -59,22 +69,24 @@ export default class ProductGrid {
             </div>
           </div>`;
       }
-      
-      productGridInner.insertAdjacentHTML("afterbegin", this.gridInner);              
-      this.elem.append(productGridInner);                                             
-      this.cardsArr = [];                                                                                                                      
-      this.gridInner = "";                                                            
+
+      productGridInner.insertAdjacentHTML("afterbegin", this.gridInner);
+      this.elem.append(productGridInner);
+      this.cardsArr = [];
+      this.gridInner = "";
 
       if (document.querySelector(".products-grid__inner").innerHTML === "") {
-        document.querySelector(".products-grid__inner").insertAdjacentHTML("afterbegin", this.gridInnerRender);
+        document
+          .querySelector(".products-grid__inner")
+          .insertAdjacentHTML("afterbegin", this.gridInnerRender);
       }
     };
 
     cards();
   }
 
-  card(products) {                                
-    let productGrid = document.createElement("div"); 
+  card(products) {
+    let productGrid = document.createElement("div");
     productGrid.classList.add("products-grid");
 
     let gridInner = "";
@@ -83,7 +95,9 @@ export default class ProductGrid {
       gridInner += `
   <div class="card" id ="${this.products[i].id}">
     <div class="card__top">
-      <img src="/assets/images/products/${products[i].image}" class="card__image" alt="product">
+      <img src="/assets/images/products/${
+        products[i].image
+      }" class="card__image" alt="product">
       <span class="card__price">€${products[i].price.toFixed(2)}</span>
     </div>
     <div class="card__body">
@@ -96,8 +110,11 @@ export default class ProductGrid {
     }
 
     this.gridInnerRender = gridInner;
-    productGrid.insertAdjacentHTML("afterbegin", `
-    <div class="products-grid__inner">${gridInner}</div>`);
+    productGrid.insertAdjacentHTML(
+      "afterbegin",
+      `
+    <div class="products-grid__inner">${gridInner}</div>`
+    );
 
     return productGrid;
   }

@@ -14,7 +14,7 @@
   text-align: center;
 }
 
-.cart-form__group+.cart-form__group {
+.cart-form__group + .cart-form__group {
   margin-top: 16px;
 }
 
@@ -59,11 +59,11 @@
     display: block;
   }
 
-  .cart-form__group.cart-form__group_row>.cart-form__input {
+  .cart-form__group.cart-form__group_row > .cart-form__input {
     margin-top: 16px;
   }
 
-  .cart-form__group.cart-form__group_row>.cart-form__input:first-child {
+  .cart-form__group.cart-form__group_row > .cart-form__input:first-child {
     margin-top: 0;
   }
 }
