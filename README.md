@@ -13,6 +13,7 @@ The website of the restaurant "Bangkok Express", with the ability to make an ord
 - Async/await, callback;
 - SPA;
 - drag'n'drop;
+- Responsive Web Designs.
 
 ## Actions to view the project:
 
