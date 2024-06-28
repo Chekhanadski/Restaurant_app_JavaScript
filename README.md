@@ -2,9 +2,9 @@
 
 ## View the Project
 
-You can view the deployed Bangkok Express website here: [Bangkok Express](https://example.com
+You can view the deployed Bangkok Express website here: [Bangkok Express](https://example.com)
 
-## Project Descripti
+## Project Description
 
 Welcome to the Bangkok Express project! This project demonstrates the development of a responsive, interactive restaurant website for a Thai cuisine restaurant. The Bangkok Express website includes a "Home" page, a "Menu" page, and a "Cart" feature, each designed to provide a seamless user experience across various devices, ranging from desktops to mobile phones.
 
@@ -42,15 +42,19 @@ To run the Bangkok Express project locally:
 
 **1. Clone the repository:**
 
-git clone https://github.com/YourUsername/bangkok-express.git
+```sh
+git clone https://github.com/Chekhanadski/Restaurant_app_JavaScript.git
+```
 
 **2. Navigate to the project directory:**
 
+```sh
 cd restaurant-bangkok-express
+```
 
 **3. Start a live server:**
 
 - If you have VS Code, you can use the Live Server extension.
 - Alternatively, use any live server of your choice (e.g., Python's SimpleHTTPServer).
-- 
-4. Open `index.html` with your live server to view the Bangkok Express website.
+  
+**4.** Open `index.html` with your live server to view the Bangkok Express website.
