@@ -3,23 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Бангкок Экспресс</title>
+    <title>Bangkok Express</title>
 
-    <link rel="stylesheet" href="/src/styles/common.css" />
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="src/styles/common.css" />
+    <link rel="stylesheet" href="src/main.css" />
 
     <script type="module">
-      import Main from "./index.js";
+      import Main from "./src/index.js";
 
       let main = new Main();
 
-      main.render().then(() => console.log("Страница готова!"));
+      main.render();
     </script>
   </head>
 
   <body>
     <header class="header container">
-      <!-- the font does not support cyrillic -->
       <h1 class="heading logo">Bangkok Express</h1>
       <h3 class="subheading">Great food・Free delivery・Fair price</h3>
 
@@ -58,12 +57,12 @@
               <div class="filters__checkbox">
                 <input
                   class="styled-checkbox"
-                  id="vegeterian-checkbox"
+                  id="vegetarian-checkbox"
                   type="checkbox"
                   value="1"
                 />
-                <label for="vegeterian-checkbox">
-                  <span class="filters__label">Vegeterian only</span>
+                <label for="vegetarian-checkbox">
+                  <span class="filters__label">Vegetarian only</span>
                 </label>
               </div>
             </div>

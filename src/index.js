@@ -32,7 +32,9 @@ export default class Main {
     let cart = new Cart(cartIcon);
 
     async function getProductList() {
-      return await fetch("products.json").then((response) => response.json());
+      return await fetch("src/products.json").then((response) =>
+        response.json()
+      );
     }
 
     let productList = await getProductList();
@@ -46,7 +48,7 @@ export default class Main {
 
     productsGrid.updateFilter({
       noNuts: document.getElementById("nuts-checkbox").checked,
-      vegeterianOnly: document.getElementById("vegeterian-checkbox").checked,
+      vegetarianOnly: document.getElementById("vegetarian-checkbox").checked,
       maxSpiciness: stepSlider.value,
       category: ribbonMenu.value,
     });
@@ -76,9 +78,9 @@ export default class Main {
           noNuts: event.target.checked,
         });
       }
-      if (event.target.closest("#vegeterian-checkbox")) {
+      if (event.target.closest("#vegetarian-checkbox")) {
         productsGrid.updateFilter({
-          vegeterianOnly: event.target.checked,
+          vegetarianOnly: event.target.checked,
         });
       }
     });

@@ -32,7 +32,7 @@ export default class ProductGrid {
           continue;
         }
 
-        if (this.filters.vegeterianOnly && !product.vegeterian) {
+        if (this.filters.vegetarianOnly && !product.vegetarian) {
           continue;
         }
 
