@@ -2,7 +2,7 @@
 
 ## View the Project
 
-You can view the deployed Bangkok Express website here: [Bangkok Express](https://example.com)
+You can view the deployed Bangkok Express website here: [Bangkok Express](https://bangkok-express-shop.netlify.app/)
 
 ## Project Description
 
