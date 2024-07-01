@@ -2,7 +2,7 @@ export default [
   {
     name: "Penang shrimp",
     price: 16,
-    image: "penang_shrimp.png",
+    image: "../assets/images/carousel/penang_shrimp.png",
     id: "penang-shrimp",
   },
   {
